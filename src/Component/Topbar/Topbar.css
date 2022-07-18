@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Lato&family=Roboto&display=swap');
+
+
+.navbar{
+    position: absolute;
+width: 1173px;
+height: 61px;
+left: 53px;
+top: 0px;
+justify-content: space-between;
+}
+
+
+.nav-link{
+   
+
+
+/* font-family: 'IBM Plex Sans'; */
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 20px;
+
+
+color: #374151;
+}
+
+@media (max-width:400px){
+    .nav-item{
+        display: none;
+       
+        justify-content: end;
+       
+    }
+    /* .navbar{
+        position: absolute;
+       width: 348px;
+        height: 61px;
+        left: 53px;
+        top: 0px;
+    } */
+}

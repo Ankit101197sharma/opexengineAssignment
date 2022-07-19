@@ -1,15 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Lato&family=Roboto&display=swap');
 
 
-.navbar{
-    position: absolute;
-width: 1173px;
-height: 61px;
-left: 53px;
-top: 0px;
-justify-content: space-between;
-}
 
+    .navbar {
+        position: absolute;
+        width: 1295px;
+        height: 61px;
+        left: 53px;
+        top: 0px;
+        justify-content: space-between;
+    }
+
+.opex_engine{
+    display: flex;
+    justify-content: space-between;
+}
 
 .nav-link{
    

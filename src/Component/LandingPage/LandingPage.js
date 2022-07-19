@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./LandingPage.css";
-
+import grayVector from "../../Assests/grayVector.svg";
 import icon1 from "../../Assests/icon1.svg";
 import tableData, { dataSet, projectData } from "../../DataFile";
 import Slider from "react-slick";
@@ -25,10 +25,12 @@ const LandingPage = () => {
       projectIcon: `${GroupGreen}`,
       projectYear: "2021 SMC Platform",
       projectButton: "View",
-      status: "live",
-      
+      statusText: "live",
+
       projectDate: "Last Updated on: 02/01/2022",
-      projectSucces: 100,
+      projectSucces: "",
+      projectSuceesText: "100% Completed",
+      completion: 100,
       projectProgress: "success",
     },
     {
@@ -36,66 +38,67 @@ const LandingPage = () => {
       projectYear: "2022 SMC Platform",
       projectButton: "Resume",
       projectDate: "Last Updated on: 02/01/2022",
-      projectSucces: 80,
+      projectSucces: "",
+      projectSuceesText: "80% Completed",
+      completion: 80,
       projectProgress: "primary",
     },
   ];
   const [bgColor, setBgColor] = useState({
     success: "#1EA706",
-    danger: "#0d6efd",
-    info: "#dc3545",
-    primary: "#0866C6",
+    // danger: "#0d6efd",
+    // info: "#dc3545",
+    // primary: "#0866C6",
   });
 
   const settings = {
     dots: true,
-    
   };
 
+  const getColor = (data) => {
+    console.log("##", data);
 
-  const getColor=(data)=>{
-    console.log(data===100,"dddddddddd")
+    switch (data) {
+      case 100:
+        return "#1EA706";
 
-    switch(data){
-
-  case (100):
-    return "#1EA706";
-  
-    case (80):
-      return "#0866C6";
+      case 80:
+        return "#e9ecef";
       default:
-        return "yellow"
-}
-  }
+        return "yellow";
+    }
+  };
   return (
     <>
       <div className="landingSection">
         <div className="mainDiv">
           <p className="benchmarkPara">
-            BenchmarkEngine <span className="text-warning" >/ </span>
-            <span className="fw-bold" >Mydata</span>
+            BenchmarkEngine <span className="text-warning">/ </span>
+            <span className="fw-bold">Mydata</span>
           </p>
           <div className="dashbord">
             <div>
-              <img src={icon1} alt="" />
+              <img src={grayVector} alt="" />
             </div>
             <div>
-              <p className="mainHead">DashBoard</p>
-              <p className="mainHeadText">Welcome to your BenchmarkEngine™</p>
+              <p className="mainHead mb-0">DashBoard</p>
+              <p className="mainHeadText ml-0">
+                Welcome to your BenchmarkEngine™
+              </p>
             </div>
           </div>
         </div>
         <div className="mainContainer">
-          <div className="mainContainerLeft">
+          <div className="Left_part1">
             <div>
               <div className="contentHead">
                 <div className="recentService">
-                  <div className="mt-3" >
+                  <div className="mt-3">
                     <p className="surveyPara">MY RECENT SURVEYS</p>
                   </div>
                   <div className="recentServiceRight">
-                    <div style={{width:'18%'}} >
-                      <p className="surveyPara">legend :</p>{" "}
+                    <div style={{ width: "18%" }}>
+                      <p className="surveyPara">legend :</p>
                     </div>
 
                     <div className="legendItem">
@@ -119,7 +122,7 @@ const LandingPage = () => {
                     <div>
                       <img src={Triangle} alt="" />
                     </div>
-                    <div className="triangleCopy" >
+                    <div className="triangleCopy">
                       <img src={TriangleCopy} alt="" />
                     </div>
                   </div>
@@ -138,10 +141,7 @@ const LandingPage = () => {
                           {" "}
                           <img src={data.projectIcon} alt="" />{" "}
                         </div>
-                        <div
-                        className="projectIcons"
-                         
-                        >
+                        <div className="projectIcons">
                           <span className="surveyPara1">
                             {" "}
                             {data.projectYear}{" "}
@@ -152,33 +152,33 @@ const LandingPage = () => {
                         </div>
                       </div>
                       <div className="actionHeadDiv">
-                        <div
-                        className="actionChildDiv"
-                          
-                        >
-                          <div >
-                            <ProgressBar 
-                            style={{
-                              backgroundColor: getColor(data.projectSucces)
-                            }}
-                            className="progress"
-                              // variant={data.projectSucces}
-                              now={data.projectSucces}
-                            />
-                            
-                            <span className="live">{data.status}</span>
-                          </div>
-                          
+                        <div className="actionChildDiv">
                           <div>
-                            <p className="surveyStatus">{data.projectSucces}</p>
+                            {console.log("####", getColor(data.completion))}
+                            <ProgressBar
+                              style={{
+                                backgroundColor: getColor(data.completion),
+                              }}
+                              className="progress"
+                              variant={data.completion === 100 && "success"}
+                              now={data.completion}
+                            />
+
+                            <span className="live">{data.statusText}</span>
+                          </div>
+
+                          <div>
+                            <p className="surveyStatus">
+                              {data.projectSuceesText}
+                            </p>
                           </div>
                         </div>
                       </div>
                       <div className="actionHeadDiv">
                         <div>
-                          <Button className="buttons">
+                          <button className="  btn-secoundry buttonAction">
                             {data.projectButton}
-                          </Button>
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -187,103 +187,95 @@ const LandingPage = () => {
               })}
             </div>
           </div>
-
-          <div className="mainContainerRight">
-            {dataSet.map((item) => {
-              return (
-                <>
-                  <div >
-                  <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-  <div class="carousel-indicators">
-    <button style={{width:"8px", height:'8px',backgroundColor:"white",   borderRadius: "50%"}} type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active " aria-current="true" aria-label="Slide 1"></button>
-    <button style={{width:"6px", height:'6px',backgroundColor:"white",   borderRadius: "50%"}} type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2" ></button>
-    <button style={{width:"6px", height:'6px',backgroundColor:"white",   borderRadius: "50%"}} type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
-  <div class="carousel-inner">
-    <div class="carousel-item  active" data-bs-interval="1000">
-      <img src={Rectangle4} class="d-block w-100" alt="..."/>
-      <div class="carousel-caption d-block d-md-block">
-        <button className=" btn btn-secondary"> {item.newsBtn} </button>
-      
-        <h5 className="newEvt" >{item.newEvent}</h5>
-        <p className="eventPara"  >{item.eventPara}</p>
-        <p className="vBtn">view update <img src={ArrowRight} alt="" /></p>
-      </div>
-    </div>
-    <div class="carousel-item" data-bs-interval="500">
-      <img src="https://images.unsplash.com/photo-1657664068979-024361c37572?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDJ8Ym84alFLVGFFMFl8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60" class="d-block w-100" alt="..."/>
-      <div class="carousel-caption d-block d-md-block">
-        <h5>Second slide label</h5>
-        <p>Some representative placeholder content for the second slide.</p>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img src={Rectangle4} class="d-block w-100" alt="..."/>
-      <div class="carousel-caption d-block d-md-block">
-        <h5>Third slide label</h5>
-        <p>Some representative placeholder content for the third slide.</p>
-      </div>
-    </div>
-  </div>
-  
-</div>
-                  
-                   
-                    {/* <div
-                      id="carouselExampleCaptions"
-                      className="carousel slide"
-                      data-bs-ride="carousel"
-                    >
-                      <div className="carousel-indicators w-0">
-                        <button
-                          type="button"
-                          data-bs-target="#carouselExampleCaptions"
-                          data-bs-slide-to="0"
-                          class="active"
-                          aria-current="true"
-                          aria-label="Slide 1"
-                        ></button>
-                      </div>
-                      <div class="carousel-inner">
-                        <div class="carousel-item ">
-                           
-                          <img
-                          
-                          style={{width:'100%', height:'248px'}}
-                            src={Rectangle4}
-                           
-                            alt="..."
-                          />
-                         
-                          
-                          <div className="carousel-caption d-block d-md-block mb-1">
-                            <button className="btn btn-secondary">
-                              {item.newsBtn}
-                            </button>
-                            <h5 className="newEvt">{item.newEvent}</h5>
-                            <p className="eventPara">{item.eventPara}</p>
-                            <p className="vBtn">
-                              {item.viewBtn} <img src={ArrowRight} alt="" />
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div> */}
+          {dataSet.map((item) => {
+            return (
+              <div className="Right_part">
+                <div
+                  id="carouselExampleCaptions"
+                  className="carousel slide"
+                  data-bs-ride="carousel"
+                >
+                  <div className="carousel-indicators">
+                    <button
+                      type="button"
+                      data-bs-target="#carouselExampleCaptions"
+                      data-bs-slide-to="0"
+                      className="active"
+                      aria-current="true"
+                      aria-label="Slide 1"
+                    ></button>
+                    <button
+                      type="button"
+                      data-bs-target="#carouselExampleCaptions"
+                      data-bs-slide-to="1"
+                      aria-label="Slide 2"
+                    ></button>
+                    <button
+                      type="button"
+                      data-bs-target="#carouselExampleCaptions"
+                      data-bs-slide-to="2"
+                      aria-label="Slide 3"
+                    ></button>
                   </div>
-                </>
-              );
-            })}
-          </div>
+                  <div className="carousel-inner">
+                    <div className="carousel-item active">
+                      <img src={Rectangle4} className="img_CArd" alt="..." />
+                      <div className="carousel-caption d-block d-md-block text-start">
+                        <button className="buttonSlider">
+                          {" "}
+                          {item.newsBtn}{" "}
+                        </button>
+
+                        <h5 className="newEvt">{item.newEvent}</h5>
+                        <p className="eventPara ">{item.eventPara}</p>
+                        <p className="vBtn">
+                          {" "}
+                          {item.viewBtn} <img src={ArrowRight} alt="" />{" "}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="carousel-item">
+                      <img src={Rectangle4} className="img_CArd" alt="..." />
+                      <div className="carousel-caption d-block d-md-block text-start">
+                        <button className="buttonSlider">
+                          {" "}
+                          {item.newsBtn}{" "}
+                        </button>
+
+                        <h5 className="newEvt">{item.newEvent}</h5>
+                        <p className="eventPara ">{item.eventPara}</p>
+                        <p className="vBtn">
+                          {" "}
+                          {item.viewBtn} <img src={ArrowRight} alt="" />{" "}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="carousel-item">
+                      <img src={Rectangle4} className="img_CArd" alt="..." />
+                      <div className="carousel-caption d-block d-md-block text-start">
+                        <button className="buttonSlider">
+                          {" "}
+                          {item.newsBtn}{" "}
+                        </button>
+
+                        <h5 className="newEvt">{item.newEvent}</h5>
+                        <p className="eventPara ">{item.eventPara}</p>
+                        <p className="vBtn">
+                          {" "}
+                          {item.viewBtn} <img src={ArrowRight} alt="" />{" "}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
-        <div
-        className="button-Div"
-          
-        >
-          <div
-          className="buttons-child"
-           
-          >
-            <div className="d-flex" >
+
+        <div className="button-Div">
+          <div className="buttons-child">
+            <div className="d-flex">
               <p className="buttonBench">My Benchmarks</p>
               <div className="selectbtn">
                 <select class="form-select" aria-label="Default select example">
@@ -294,10 +286,7 @@ const LandingPage = () => {
                 </select>
               </div>
             </div>
-            <div
-            className="buttons-group"
-              
-            >
+            <div className="buttons-group">
               <button className="buttonUser">
                 {" "}
                 <img src={FolderD2} alt="" /> Save Dashboard

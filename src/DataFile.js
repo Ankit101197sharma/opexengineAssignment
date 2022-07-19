@@ -8,14 +8,5 @@ export const dataSet=[
         
     },
     
-]
-export const tableData=[
-    {
-        "textheading":"MY RECENT SURVEYS",
-        "labelHead":"Legend:",
-        "checkStarted":" not started",
-        "checkProg":"in progress",
-        "checkCompl":'completed'
-    },
     
 ]

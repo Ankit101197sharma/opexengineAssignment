@@ -1,4 +1,5 @@
 
+
 import './App.css';
 
 import ChartComp from './Component/ChartComp/ChartComp';
@@ -9,7 +10,7 @@ import Topbar from './Component/Topbar/Topbar';
 
 function App() {
   return (
-    <div classNameName="App">
+    <div className="App">
       <Topbar/>
       <SideBar/>
       <LandingPage/>

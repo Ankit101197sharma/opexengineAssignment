@@ -9,10 +9,15 @@ const Topbar = () => {
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-white ">
-        <div className="container-fluid ">
+        <div className="container-fluid opex_engine ">
+          
+          <div >
           <a className="navbar-brand" href="#">
             <img src={logoOpex} alt="" />
           </a>
+          </div>
+          
+          <div>
           <button
             className="navbar-toggler"
             type="button"
@@ -68,6 +73,7 @@ const Topbar = () => {
                 <img className="nav-link " src={personCircle} alt="" />
               </li>
             </ul>
+          </div>
           </div>
         </div>
       </nav>

@@ -136,34 +136,9 @@ const ChartComp = () => {
             colors: ["#304758"],
           },
         },
-        // yaxis: {
-        //   title: {
-        //     text: "Years",
-        //     offsetX: 0,
-        //     offsetY: 0,
-        //     style: {
-        //       fontSize: "13px",
-        //       fontWeight: 600,
-        //       textAlign: "right",
-        //       cssClass: "apexcharts-xaxis-title",
-        //     },
-        //   },
-        //   labels: {
-        //     show: true,
-        //   },
-        // },
+        
         xaxis: {
-          // title: {
-          //   text: "Partnered companies",
-          //   offsetX: 0,
-          //   offsetY: 0,
-          //   style: {
-          //     fontSize: "13px",
-          //     fontWeight: 600,
-          //     textAlign: "center",
-          //     cssClass: "apexcharts-xaxis-title",
-          //   },
-          // },
+          
           labels: {
             show: true,
           },
@@ -235,33 +210,13 @@ const ChartComp = () => {
           },
         },
         yaxis: {
-          // title: {
-          //   text: "Years",
-          //   offsetX: 0,
-          //   offsetY: 0,
-          //   style: {
-          //     fontSize: "13px",
-          //     fontWeight: 600,
-          //     textAlign: "center",
-          //     cssClass: "apexcharts-xaxis-title",
-          //   },
-          // },
+          
           labels: {
             show: true,
           },
         },
         xaxis: {
-          // title: {
-          //   text: "Partnered companies",
-          //   offsetX: 0,
-          //   offsetY: 0,
-          //   style: {
-          //     fontSize: "13px",
-          //     fontWeight: 600,
-          //     textAlign: "center",
-          //     cssClass: "apexcharts-xaxis-title",
-          //   },
-          // },
+         
           labels: {
             show: true,
           },
@@ -332,33 +287,13 @@ const ChartComp = () => {
           },
         },
         yaxis: {
-          // title: {
-          //   text: "Years",
-          //   offsetX: 0,
-          //   offsetY: 0,
-          //   style: {
-          //     fontSize: "13px",
-          //     fontWeight: 600,
-          //     textAlign: "center",
-          //     cssClass: "apexcharts-xaxis-title",
-          //   },
-          // },
+          
           labels: {
             show: true,
           },
         },
         xaxis: {
-          // title: {
-          //   text: "Partnered companies",
-          //   offsetX: 0,
-          //   offsetY: 0,
-          //   style: {
-          //     fontSize: "13px",
-          //     fontWeight: 600,
-          //     textAlign: "center",
-          //     cssClass: "apexcharts-xaxis-title",
-          //   },
-          // },
+          
           labels: {
             show: true,
           },
@@ -429,33 +364,13 @@ const ChartComp = () => {
           },
         },
         yaxis: {
-          // title: {
-          //   text: "Years",
-          //   offsetX: 0,
-          //   offsetY: 0,
-          //   style: {
-          //     fontSize: "13px",
-          //     fontWeight: 600,
-          //     textAlign: "center",
-          //     cssClass: "apexcharts-xaxis-title",
-          //   },
-          // },
+          
           labels: {
             show: true,
           },
         },
         xaxis: {
-          // title: {
-          //   text: "Partnered companies",
-          //   offsetX: 0,
-          //   offsetY: 0,
-          //   style: {
-          //     fontSize: "13px",
-          //     fontWeight: 600,
-          //     textAlign: "center",
-          //     cssClass: "apexcharts-xaxis-title",
-          //   },
-          // },
+          
           labels: {
             show: true,
           },
@@ -523,33 +438,13 @@ const ChartComp = () => {
           },
         },
         yaxis: {
-          // title: {
-          //   text: "Years",
-          //   offsetX: 0,
-          //   offsetY: 0,
-          //   style: {
-          //     fontSize: "13px",
-          //     fontWeight: 600,
-          //     textAlign: "center",
-          //     cssClass: "apexcharts-xaxis-title",
-          //   },
-          // },
+          
           labels: {
             show: true,
           },
         },
         xaxis: {
-          // title: {
-          //   text: "Partnered companies",
-          //   offsetX: 0,
-          //   offsetY: 0,
-          //   style: {
-          //     fontSize: "13px",
-          //     fontWeight: 600,
-          //     textAlign: "center",
-          //     cssClass: "apexcharts-xaxis-title",
-          //   },
-          // },
+          
           labels: {
             show: true,
           },
@@ -618,33 +513,13 @@ const ChartComp = () => {
           },
         },
         yaxis: {
-          // title: {
-          //   text: "Years",
-          //   offsetX: 0,
-          //   offsetY: 0,
-          //   style: {
-          //     fontSize: "13px",
-          //     fontWeight: 600,
-          //     textAlign: "center",
-          //     cssClass: "apexcharts-xaxis-title",
-          //   },
-          // },
+          
           labels: {
             show: true,
           },
         },
         xaxis: {
-          // title: {
-          //   text: "Partnered companies",
-          //   offsetX: 0,
-          //   offsetY: 0,
-          //   style: {
-          //     fontSize: "13px",
-          //     fontWeight: 600,
-          //     textAlign: "center",
-          //     cssClass: "apexcharts-xaxis-title",
-          //   },
-          // },
+         
           dataLabels: {
             enabled: true,
             formatter: function (data) {
@@ -680,7 +555,7 @@ const ChartComp = () => {
                       options={insightChart.options}
                       series={insightChart.series}
                       type="bar"
-                      width="95%"
+                      width="90%"
                       height="180%"
                     />
                   </div>

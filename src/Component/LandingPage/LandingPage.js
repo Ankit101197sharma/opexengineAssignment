@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import "./LandingPage.css";
 import grayVector from "../../Assests/grayVector.svg";
 
@@ -19,7 +19,22 @@ import ProgressBar from "react-bootstrap/ProgressBar";
 
 
 const LandingPage = () => {
-  const projectData = [
+  const [facts, setFacts] = useState([]);
+
+  
+  useEffect(() => {
+      fetch("https://catfact.ninja/fact")
+      .then((result)=>{
+        result.json().then((resp)=>{
+          setFacts(resp.fact)
+        })
+      })
+
+
+  }, []);
+// console.log("###",  facts.fact)
+
+const projectData = [
     {
       projectIcon: `${GroupGreen}`,
       projectYear: "2021 SMC Platform",
@@ -43,10 +58,7 @@ const LandingPage = () => {
       projectProgress: "primary",
     },
   ];
-  // const [bgColor, setBgColor] = useState({
-  //   success: "#1EA706",
-    
-  // });
+  
 
   
 
@@ -63,6 +75,15 @@ const LandingPage = () => {
         return "yellow";
     }
   };
+
+
+  
+  
+ 
+
+
+
+
   return (
     <>
       <div className="landingSection">
@@ -222,7 +243,7 @@ const LandingPage = () => {
                         </button>
 
                         <h5 className="newEvt">{item.newEvent}</h5>
-                        <p className="eventPara ">{item.eventPara}</p>
+                        <p className="eventPara ">{facts}</p>
                         <p className="vBtn">
                           {" "}
                           {item.viewBtn} <img src={ArrowRight} alt="" />{" "}
@@ -237,7 +258,7 @@ const LandingPage = () => {
                           {item.newsBtn}{" "}
                         </button>
 
-                        <h5 className="newEvt">{item.newEvent}</h5>
+                        <h5 className="newEvt">{facts}</h5>
                         <p className="eventPara ">{item.eventPara}</p>
                         <p className="vBtn">
                           {" "}
@@ -253,7 +274,7 @@ const LandingPage = () => {
                           {item.newsBtn}
                         </button>
 
-                        <h5 className="newEvt">{item.newEvent}</h5>
+                        <h5 className="newEvt">{facts}</h5>
                         <p className="eventPara ">{item.eventPara}</p>
                         <p className="vBtn">
                           

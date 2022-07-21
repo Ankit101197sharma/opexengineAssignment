@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import "./LandingPage.css";
 import grayVector from "../../Assests/grayVector.svg";
-import icon1 from "../../Assests/icon1.svg";
-import tableData, { dataSet, projectData } from "../../DataFile";
-import Slider from "react-slick";
+
+import  { dataSet, projectData } from "../../DataFile";
 import FolderD2 from "../../Assests/FolderD2.svg";
 import VectorSetting from "../../Assests/VectorSetting.svg";
 import VectorAdd from "../../Assests/VectorAdd.svg";
@@ -16,8 +15,8 @@ import GroupBlue from "../../Assests/GroupBlue.svg";
 import MenuIcon from "../../Assests/MenuIcon.svg";
 import Menu2 from "../../Assests/Menu2.svg";
 import ProgressBar from "react-bootstrap/ProgressBar";
-import Button from "react-bootstrap/Button";
-import { GiHamburgerMenu } from "react-icons/gi";
+// import Button from "react-bootstrap/Button";
+
 
 const LandingPage = () => {
   const projectData = [
@@ -44,16 +43,12 @@ const LandingPage = () => {
       projectProgress: "primary",
     },
   ];
-  const [bgColor, setBgColor] = useState({
-    success: "#1EA706",
-    // danger: "#0d6efd",
-    // info: "#dc3545",
-    // primary: "#0866C6",
-  });
+  // const [bgColor, setBgColor] = useState({
+  //   success: "#1EA706",
+    
+  // });
 
-  const settings = {
-    dots: true,
-  };
+  
 
   const getColor = (data) => {
     console.log("##", data);
@@ -254,15 +249,15 @@ const LandingPage = () => {
                       <img src={Rectangle4} className="img_CArd" alt="..." />
                       <div className="carousel-caption d-block d-md-block text-start">
                         <button className="buttonSlider">
-                          {" "}
-                          {item.newsBtn}{" "}
+                          
+                          {item.newsBtn}
                         </button>
 
                         <h5 className="newEvt">{item.newEvent}</h5>
                         <p className="eventPara ">{item.eventPara}</p>
                         <p className="vBtn">
-                          {" "}
-                          {item.viewBtn} <img src={ArrowRight} alt="" />{" "}
+                          
+                          {item.viewBtn} <img src={ArrowRight} alt="" />
                         </p>
                       </div>
                     </div>
@@ -278,7 +273,7 @@ const LandingPage = () => {
             <div className="d-flex">
               <p className="buttonBench">My Benchmarks</p>
               <div className="selectbtn">
-                <select class="form-select" aria-label="Default select example">
+                <select className="form-select" aria-label="Default select example">
                   <option selected>Saved Dashboards</option>
                   <option value="1">One</option>
                   <option value="2">Two</option>
@@ -288,24 +283,24 @@ const LandingPage = () => {
             </div>
             <div className="buttons-group">
               <button className="buttonUser">
-                {" "}
+               
                 <img src={FolderD2} alt="" /> Save Dashboard
               </button>
               <button className="buttonUser">
-                {" "}
-                <img src={VectorSetting} alt="" /> Manage Dashboard{" "}
+              
+                <img src={VectorSetting} alt="" /> Manage Dashboard
               </button>
               <button className="buttonUser">
-                {" "}
-                <img src={VectorAdd} alt="" /> Add Benchmark{" "}
+                
+                <img src={VectorAdd} alt="" /> Add Benchmark
               </button>
               <button className="buttonUser2">
-                {" "}
-                <img src={MenuIcon} alt="" />{" "}
+                
+                <img src={MenuIcon} alt="" />
               </button>
               <button className="buttonUser2">
-                {" "}
-                <img src={Menu2} alt="" />{" "}
+                
+                <img src={Menu2} alt="" />
               </button>
             </div>
           </div>

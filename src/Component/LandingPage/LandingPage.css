@@ -14,7 +14,7 @@
 
   height: 87px;
   margin-left: 24px;
-  /* margin-top: 39px; */
+  
 }
 .benchmarkPara {
   font-style: normal;
@@ -149,7 +149,7 @@ text-align: left;
   display: flex;
   width: 750px;
 align-items: center;
- /* padding: 10px; */
+ 
   justify-content: space-between;
 box-shadow: 0px 2px 4px rgba(216, 220, 230, 0.52);
 border-radius: 0px 0px 4px 4px;
@@ -283,7 +283,7 @@ color: #1EA706;
  width: 508px;
  
  background-color: #041a72;
- /* margin-top: 19px; */
+ 
  height: 301px;
  
  
@@ -317,7 +317,7 @@ color: #1EA706;
   font-weight: 600;
   font-size: 15px;
   line-height: 18px;
-  /* identical to box height */
+ 
   text-align: left;
   text-transform: capitalize;
   
@@ -330,7 +330,7 @@ color: #1EA706;
   font-weight: 600;
   font-size: 13px;
   line-height: 16px;
-  /* identical to box height */
+  
   text-align: left;
   text-transform: capitalize;
   
@@ -355,11 +355,11 @@ color: #1EA706;
   width: 163px;
 height: 38px;
 display: flex;
-/* white */
+
 justify-content: space-evenly;
 flex-direction: row;
 background: #FFFFFF;
-/* gray/300 */
+
 align-items: center;
 font-family: 'Fira Sans';
 font-style: normal;
@@ -460,14 +460,7 @@ width: 100%;
     justify-content: flex-start;
    
   }
-  /* .buttons-group{
-    display: flex;
-    max-width: 100%;
-    justify-content: flex-start;
-    width: calc(20%-24px);
-    
-    margin: 10px;
-  } */
+  
   
   .live{
     font-family: 'Fira Sans';
@@ -530,18 +523,3 @@ bottom: 362px;
 color: #1EA706;
   }
 }
-
-
-
-/* .progress,.progress-custom{
-background-color: transparent;
-}
-.progress-bar  {
-background-color: #1EA706 !important;
-} */
- /* .progress-custom{
-  background-color: red !important;
-} */
-/* .progress-bar {
-  background-color: #1EA706 !important;
-} */
